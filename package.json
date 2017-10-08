@@ -1,0 +1,19 @@
+{
+  "name": "test_tools",
+  "version": "1.0.0",
+  "description": "a variety of tools to assist with testing web applications",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertpatterson/test_tools.git"
+  },
+  "author": "Albert Patterson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertpatterson/test_tools/issues"
+  },
+  "homepage": "https://github.com/albertpatterson/test_tools#readme"
+}
