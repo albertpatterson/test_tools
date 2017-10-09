@@ -1,0 +1,42 @@
+.title{
+    text-align: center;
+}
+
+.step{
+    width: 100%;
+    display: none;
+    text-align: center;
+}
+
+.step.showing{
+    display: block;
+}
+
+.stepInner{
+    background: #dddddd;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.label{
+    font-size: 25px;
+    text-align: center;
+    margin: 25px;
+}
+
+.nextButton{
+    font-size: 25px;
+    background: white;
+    border: #c1c1c1 solid 2px;
+    display: block;
+    margin: 25px auto;
+}
+
+.nextButton::after{
+    content: "Next";
+}
+
+.nextButton.disabled::after{
+    content: "Loading";
+}
+

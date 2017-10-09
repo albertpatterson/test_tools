@@ -9,7 +9,7 @@
   <meta name="author" content="Albert Patterson">
   <link rel="stylesheet" href="example1.css">
 </head>
-  <h1 class="title">Click Next to Progress Through the Steps!</h1>
+  <h1 class="title">Click to Progress Through the Steps!</h1>
   <div class="step showing" id="step1" data-name="Step 1" data-next="step2"></div>
   <div class="step" id="step2" data-name="Step 2" data-next="step3"></div>
   <div class="step" id="step3" data-name="Step 3" data-next="complete"></div>
@@ -19,5 +19,22 @@
 <body>
 
   <script src="example1.js"></script>
+  <script>
+
+
+    document.getElementById("step1").action=step;
+    document.getElementById("step2").action=step;
+    document.getElementById("step3").action=step;
+
+    function step(){
+      return new Promise(function(res, rej){
+
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", res);
+        oReq.open("GET", "/step");
+        oReq.send();
+      });
+    }
+  </script>
 </body>
 </html>

@@ -15,17 +15,38 @@
         var next = step.dataset.next;
 
         var frag = document.createDocumentFragment();
+        var inner = document.createElement("div");
+        inner.classList.add("stepInner");
+        frag.appendChild(inner);
+
         var label = document.createElement("p");
         label.innerText = name;
         label.classList.add('label');
-        frag.appendChild(label);
+        inner.appendChild(label);
 
         if(next){
+            
             var nextButton = document.createElement("button");
-            nextButton.onclick = ()=>hideAndShowNext(step, next);;
-            nextButton.innerText = "Next"
             nextButton.classList.add("nextButton");
-            frag.appendChild(nextButton);
+
+            nextButton.onclick = function(){
+
+                var prom, action = step.action;
+                if(action){
+                    prom=action();
+                    nextButton.classList.add("disabled");
+                    nextButton.disabled = true;
+                }else{
+                    prom=Promise.resolve();
+                }
+
+
+                prom.then(function(){
+                    hideAndShowNext(step, next);
+                })
+            }
+
+            inner.appendChild(nextButton);
         }
 
         step.appendChild(frag);

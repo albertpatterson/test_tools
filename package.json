@@ -1,19 +1,17 @@
 {
-  "name": "test_tools",
-  "version": "1.0.0",
-  "description": "a variety of tools to assist with testing web applications",
-  "main": "index.js",
+  "name": "test-tools",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start1": "node ./examples/example1/src/bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/albertpatterson/test_tools.git"
-  },
-  "author": "Albert Patterson",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/albertpatterson/test_tools/issues"
-  },
-  "homepage": "https://github.com/albertpatterson/test_tools#readme"
+  "dependencies": {
+    "body-parser": "~1.16.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.2"
+  }
 }
