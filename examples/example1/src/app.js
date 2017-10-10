@@ -41,4 +41,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+app.initialize = function(){
+  return new Promise(function(res, rej){
+    console.log("initializing...");
+    setTimeout(function(){
+      console.log("initialized!");
+      res();
+    }, 5e3);
+  })
+}
+
 module.exports = app;

@@ -32,7 +32,7 @@ class ServerManager{
      * @memberOf ServerManager
      */
     listen(){
-        return  Promise.resolve(this.app.init && this.app.init())
+        return  Promise.resolve(this.app.initialize instanceof Function && this.app.initialize())
                 .then(function(){
                     return new Promise(function(res){
                         /**
