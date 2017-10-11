@@ -1,5 +1,5 @@
 const path = require('path');
-const ServerManager = require('../../../tools/ServerManager');
+const ServerManager = require('../../tools/ServerManager');
 
 /**
  * tester for managing the server of the app under test and test resources

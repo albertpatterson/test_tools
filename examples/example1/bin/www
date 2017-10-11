@@ -1,4 +1,4 @@
-const ServerManager = require("../../../../tools/ServerManager");
+const ServerManager = require("../../../tools/ServerManager");
 const app = require('../app');
 
 const serverManager = new ServerManager(app);

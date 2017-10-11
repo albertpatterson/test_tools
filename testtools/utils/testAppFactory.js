@@ -5,7 +5,7 @@ const url = require('url');
 const bodyParser = require('body-parser');
 
 // create a basic server to serve requested files and receive results
-const topDir = `${__dirname}/../../..`
+const topDir = `${__dirname}/../..`
 
 // map of file extensions to mime types
 const mimeTypes = {

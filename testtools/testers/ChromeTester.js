@@ -4,7 +4,7 @@ const userDataBaseDir = 'C:\\Users\\apatters\\Documents\\junk\\temp\\Chrome';
 const rimraf = require('rimraf');
 const fs = require('fs');
 const path = require('path');
-const checkExist = require('../../../tools/checkExist');
+const checkExist = require('../../tools/checkExist');
 /**
  * tester of the chrome browser
  * 

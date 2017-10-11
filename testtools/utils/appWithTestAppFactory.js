@@ -1,5 +1,4 @@
 const express = require('express');
-const appFactory = require('../../../appFactory');
 const testAppFactory = require('./testAppFactory');
 
 /**
@@ -9,9 +8,14 @@ const testAppFactory = require('./testAppFactory');
  * @param {Function} middleware the function to use if the route path does not begin with pathPrefix
  * @returns {any} output of corresponding middleware function
  */
-var unlessBeginsWith = function(pathPrefix, middleware) {
+var unlessBeginsWith = function(pathPrefixes, middleware) {
     return function(req, res, next) {
-        if (req.path.indexOf(pathPrefix)==0){
+
+        let beginsWithAny = pathPrefixes.reduce(
+            (beginsWith, curVal)=>(beginsWith || req.path.indexOf(curVal)==0), 
+            false);
+
+        if (beginsWithAny){
             return next();
         } else {
             return middleware(req, res, next);
@@ -22,22 +26,20 @@ var unlessBeginsWith = function(pathPrefix, middleware) {
 /**
  * create an app that combines the app under tests and the app that serves test resources
  * 
- * @param {any} userController 
- * @param {any} observer 
+ * @param {any} app - the app under test 
  * @returns {any} app that supplied routing for the software under test and for test resources
  */
-function appWithTestAppFactory(userController){
-    const app = appFactory(userController);
+function appWithTestAppFactory(app){
     const testApp = testAppFactory();
 
     var appWithTestApp = express();
     // unless the route path begins '/spec', serve the app under test
-    appWithTestApp.use(unlessBeginsWith('/spec', app));
+    appWithTestApp.use(unlessBeginsWith(['/spec', "/testtools"], app));
     // if the route path begins with '/spec/ serve the test resources
     appWithTestApp.use(testApp);
 
-    appWithTestApp.connectToDatabase = app.connectToDatabase.bind(app);
-    appWithTestApp.close = app.close.bind(app);
+    appWithTestApp.initialize = app.initialize instanceof Function && app.initialize.bind(app);
+    appWithTestApp.close = app.close instanceof Function && app.close.bind(app);
 
     testApp.callback = (testOutput)=>(appWithTestApp.callback(testOutput));
     return appWithTestApp;
