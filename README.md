@@ -2,8 +2,8 @@
 A library of test tools such as test runners and utilities for mocking and spying
 
 ## Available tools
-### Test tools
-#### Test Runners
+### Test tools (/testtools)
+#### Test Runners (/runners)
 * RunnerWithFixtures - Rnner of a test with a fixture
 * SuiteRunnerWithFixtures - Runner of a suite of tests with fixtures
 * SequentialSuiteRunner - Test Suite runner that runs testpoints sequentially, one after the other
@@ -13,7 +13,7 @@ A library of test tools such as test runners and utilities for mocking and spyin
 #### Mocking
 #### Stubbing
 #### Spying
-### Production Tools
+### Production Tools (/tools)
 * SeverManager - a class assisting with management of the http server of an app
 * checkExist - a method that checks for the existence of a file;
 
