@@ -1,9 +1,9 @@
-const app = require("../../examples/example1/app");
-const appWithTestAppFactory = require("../../testtools/utils/appWithTestAppFactory");
+const app = require("../../../examples/example1/app");
+const appWithTestAppFactory = require("../../../testtools/utils/appWithTestAppFactory");
 const appWithTestApp = appWithTestAppFactory(app);
 
 
-const ResultsPromise = require("../../testtools/utils/ResultsPromise");
+const ResultsPromise = require("../../../testtools/utils/ResultsPromise");
 const resultsPromise = new ResultsPromise();
 let allResults = [];
 resultsPromise.processFcn = function(results){
@@ -18,20 +18,21 @@ resultsPromise.processFcn = function(results){
 
 
 // create the server tester
-const ServerTester = require("../../testtools/testers/ServerTester");
+const ServerTester = require("../../../testtools/testers/ServerTester");
 const serverTester = new ServerTester(appWithTestApp);
 
 // create a tester for the chrome browser
-const chromeTestProcessArgs = require('../../testtools/utils/chromeTestProcessArgs');
+const chromeTestProcessArgs = require('../../../testtools/utils/chromeTestProcessArgs');
 chromeTestProcessArgs.push('--user-data-dir=C:\\Users\\apatters\\Documents\\junk\\temp\\Chrome\\0');
-const ChromeTester = require('../../testtools/testers/ChromeTester');
+const ChromeTester = require('../../../testtools/testers/ChromeTester');
 const chromeTester = new ChromeTester(chromeTestProcessArgs);
 
 // paths of the spec runner files to include in the test suite
-const specSuite = [ '/spec/example1/example1.html'];
+const specSuite = [  '/spec/example1/system/testAllSteps/testAllSteps.html',
+                     '/spec/example1/system/testAllStepsFaulty/testAllStepsFaulty.html'];
 
 // create the system level test runner
-const SystemTestSuiteRunner = require('../../testtools/runners/SystemTestSuiteRunner');
+const SystemTestSuiteRunner = require('../../../testtools/runners/SystemTestSuiteRunner');
 const systemTestSuiteRunner = new SystemTestSuiteRunner(specSuite);
 
 // set the necessary testers and options of the system level test runner

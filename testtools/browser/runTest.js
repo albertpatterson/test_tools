@@ -3,7 +3,7 @@
  * 
  * @module runTest
  */
-define(['jquery', 'jasmine-boot', 'defineReporter'], function($, boot, defineReporter){
+define(['jquery', 'jasmine-boot', 'browerTesttools/defineReporter'], function($, boot, defineReporter){
     // require the testFile defined globally
     require([testFile], function(){
         $(document).ready(function(){

@@ -7,7 +7,7 @@ const RunnerWithFixtures = require('./RunnerWithFixtures');
  * @class ConcurrentRunner
  * @extends {SuiteRunnerWithFixtures}
  */
-class ConcurrentRunner extends SuiteRunnerWithFixtures{
+class ConcurrentSuiteRunner extends SuiteRunnerWithFixtures{
 
     /**
      * transform the array of test points into a single promise, such that the
@@ -28,4 +28,4 @@ class ConcurrentRunner extends SuiteRunnerWithFixtures{
     }
 }
 
-module.exports = ConcurrentRunner;
+module.exports = ConcurrentSuiteRunner;

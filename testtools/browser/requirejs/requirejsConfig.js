@@ -6,17 +6,18 @@ requirejs = {
     paths: {
         'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min',
             
-        'followUser': './public/scripts/followUser',
-        'insertPost': './public/scripts/insertPost',
-        'showFollowedPosts': './public/scripts/showFollowedPosts',
+        // 'followUser': './public/scripts/followUser',
+        // 'insertPost': './public/scripts/insertPost',
+        // 'showFollowedPosts': './public/scripts/showFollowedPosts',
 
-        'jasmine': ['./testtools/lib/jasmine-2.6.1/jasmine'],
-        'jasmine-html': ['./testtools/lib/jasmine-2.6.1/jasmine-html'],
-        'jasmine-boot': ['./testtools/lib/jasmine-2.6.1/boot'],
+        'jasmine': ['./testtools/browser/jasmine-2.6.1/jasmine'],
+        'jasmine-html': ['./testtools/browser/jasmine-2.6.1/jasmine-html'],
+        'jasmine-boot': ['./testtools/browser/jasmine-2.6.1/boot'],
         
-        'defineReporter': './testtools/utils/defineReporter',
-        'runTest': './testtools/utils/runTest',
-        // 'squire': './testtools/utils/squire',
+        "browerTesttools": "./testtools/browser",
+
+        'runTest': './testtools/browser/runTest',
+        
 
         // 'maskWithSpy': './testtools/mock/maskWithSpy',
         // 'createFullSpy': './testtools/mock/createFullSpy',
