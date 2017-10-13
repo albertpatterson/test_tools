@@ -4,7 +4,10 @@
  * @module runTest
  */
 define(['jquery', 'jasmine-boot', 'browerTesttools/defineReporter'], function($, boot, defineReporter){
-    // require the testFile defined globally
+
+    var testScript = document.querySelector("script[data-testFile]")
+    var testFile = testScript.dataset.testfile;
+
     require([testFile], function(){
         $(document).ready(function(){
             defineReporter();

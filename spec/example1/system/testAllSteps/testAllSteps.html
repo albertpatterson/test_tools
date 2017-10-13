@@ -1,22 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--set the testFile that should be run-->
-  <script>
-        var testFile = 'spec/example1/system/testAllSteps/testAllSteps.js';
-  </script>
-
-  <!--boilerplate code-->
-  <meta charset="utf-8">
   <title>Jasmine Spec Runner v2.6.1</title>
-  <base href = "../../../.."></base>
-  <link rel="shortcut icon" type="image/png" href="testtools/browser/jasmine-2.6.1/jasmine_favicon.png">
-  <link rel="stylesheet" href="testtools/browser/jasmine-2.6.1/jasmine.css">
-  <script src='testtools/browser/requirejs/requirejsConfig.js'></script>
-  <!--<script type="text/javascript" src="public/scripts/require.js" data-main='runTest'></script>-->
-  <script type="text/javascript" src="testtools/browser/requirejs/require.js" data-main='runTest'></script>
+  <base href = "../../../.."></base>  
 </head>
 
 <body>
+  <script src="testtools/browser/initTest.js" 
+  data-testFile="spec/example1/system/testAllSteps/testAllSteps.js"></script>
 </body>
 </html>
