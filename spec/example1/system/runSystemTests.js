@@ -28,8 +28,8 @@ const ChromeTester = require('../../../testtools/testers/ChromeTester');
 const chromeTester = new ChromeTester(chromeTestProcessArgs);
 
 // paths of the spec runner files to include in the test suite
-const specSuite = [  '/spec/example1/system/testAllSteps/testAllSteps.html',
-                     '/spec/example1/system/testAllStepsFaulty/testAllStepsFaulty.html'];
+const specSuite = [  'spec/example1/system/testAllSteps/testAllSteps.js',
+                     'spec/example1/system/testAllStepsFaulty/testAllStepsFaulty.js'];
 
 // create the system level test runner
 const SystemTestSuiteRunner = require('../../../testtools/runners/SystemTestSuiteRunner');

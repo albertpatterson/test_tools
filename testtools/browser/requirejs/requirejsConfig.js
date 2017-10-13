@@ -10,13 +10,21 @@ requirejs = {
         // 'insertPost': './public/scripts/insertPost',
         // 'showFollowedPosts': './public/scripts/showFollowedPosts',
 
-        'jasmine': ['./testtools/browser/jasmine-2.6.1/jasmine'],
-        'jasmine-html': ['./testtools/browser/jasmine-2.6.1/jasmine-html'],
-        'jasmine-boot': ['./testtools/browser/jasmine-2.6.1/boot'],
+        // 'jasmine': ['./testtools/browser/jasmine-2.6.1/jasmine'],
+        // 'jasmine-html': ['./testtools/browser/jasmine-2.6.1/jasmine-html'],
+        // 'jasmine-boot': ['./testtools/browser/jasmine-2.6.1/boot'],
         
-        "browerTesttools": "./testtools/browser",
+        // "browerTesttools": "./testtools/browser",
 
-        'runTest': './testtools/browser/runTest',
+        // 'runTest': 'testtools/browser/runTest',
+
+        'jasmine': ['./jasmine-2.6.1/jasmine'],
+        'jasmine-html': ['./jasmine-2.6.1/jasmine-html'],
+        'jasmine-boot': ['./jasmine-2.6.1/boot'],
+        
+        "browerTesttools": ".",
+
+        // 'runTest': 'testtools/browser/runTest',
         
 
         // 'maskWithSpy': './testtools/mock/maskWithSpy',

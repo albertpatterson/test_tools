@@ -1,4 +1,4 @@
-const path = require('path');
+const url = require('url');
 const ServerManager = require('../../tools/ServerManager');
 
 /**
@@ -49,7 +49,13 @@ class ServerTester{
      */
     getSpecUrl(specPath){
         const port = this.serverManager.port;
-        return path.join(`http://localhost:${port}/`, specPath)
+        return url.format({
+            protocol: "http",
+            port: port,
+            hostname: "localhost",
+            pathname: "/testtools/browser/testRunner.html",
+            search: "testFile="+specPath
+        });
     } 
 }
 

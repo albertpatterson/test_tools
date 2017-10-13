@@ -3,10 +3,15 @@
  * 
  * @module runTest
  */
-define(['jquery', 'jasmine-boot', 'browerTesttools/defineReporter'], function($, boot, defineReporter){
+define(['jquery',
+        'jasmine-boot', 
+        'browerTesttools/defineReporter',
+        "browerTesttools/getSearchParameters"], function($, boot, defineReporter, getSearchParameters){
 
-    var testScript = document.querySelector("script[data-testFile]")
-    var testFile = testScript.dataset.testfile;
+    // var testScript = document.querySelector("script[data-testFile]")
+    // var testFile = testScript.dataset.testfile;
+
+    testFile = "/"+getSearchParameters().testFile;
 
     require([testFile], function(){
         $(document).ready(function(){
