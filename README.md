@@ -27,4 +27,4 @@ A library of test tools such as test runners and utilities for mocking and spyin
 2. $> npm install
 
 ## Running Example Tests
-$> npm run example1
+$> npm run testSystem1
