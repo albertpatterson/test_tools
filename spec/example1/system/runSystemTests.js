@@ -1,3 +1,8 @@
+// paths of the spec runner files to include in the test suite
+const specSuite = [  
+    'spec/example1/system/testAllSteps/testAllSteps.js',
+    'spec/example1/system/testAllStepsFaulty/testAllStepsFaulty.js'];
+
 const app = require("../../../examples/example1/app");
 const appWithTestAppFactory = require("../../../testtools/utils/appWithTestAppFactory");
 const appWithTestApp = appWithTestAppFactory(app);
@@ -26,10 +31,6 @@ const chromeTestProcessArgs = require('../../../testtools/utils/chromeTestProces
 chromeTestProcessArgs.push('--user-data-dir=C:\\Users\\apatters\\Documents\\junk\\temp\\Chrome\\0');
 const ChromeTester = require('../../../testtools/testers/ChromeTester');
 const chromeTester = new ChromeTester(chromeTestProcessArgs);
-
-// paths of the spec runner files to include in the test suite
-const specSuite = [  'spec/example1/system/testAllSteps/testAllSteps.js',
-                     'spec/example1/system/testAllStepsFaulty/testAllStepsFaulty.js'];
 
 // create the system level test runner
 const SystemTestSuiteRunner = require('../../../testtools/runners/SystemTestSuiteRunner');

@@ -39,7 +39,8 @@ class ViewTestSuiteRunner extends ConcurrentSuiteRunner{
 
         console.log('exercise '+idx)
 
-        const url = this.serverTester.getSpecUrl(`${specRunnerPath}?idx=${idx}`);
+        // const url = this.serverTester.getSpecUrl(`${specRunnerPath}?idx=${idx}`);
+        const url = this.serverTester.getSpecUrl(specRunnerPath);
         const browserTester = this.browserTesters[idx];
         const resultsPromise = this.resultsPromises[idx];
 

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start1": "node ./examples/example1/bin/www"
+    "testSystem1": "node ./spec/example1/system/runSystemTests"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
